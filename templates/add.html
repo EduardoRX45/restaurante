@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Productos</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+</head>
+<body>
+    <h1>Agregar Productos</h1>
+    <br>
+
+    <form action="/add_prod" method="post">
+        <input type="number" placeholder="IdProducto" id="id" name="id"/>
+        <input type="text" placeholder="Nombre" id="nombre" name="nombre"/>
+        <input type="number" placeholder="Cantidad" id="cantidad" name="cantidad"/>
+        <input type="number" placeholder="Precio" id="precio" name="precio" step="0.01"/>
+        <button type="submit" class="btn_ok">Agregar</button>
+    </form>
+
+    <a href="/" class="btn_no">Regresar</a>
+</body>
+</html>
