@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Productos</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+</head>
+<body>
+    <h1>Inventario</h1>
+    <br>
+    <a href="/" class="btn_no">Regresar</a>
+
+    <div>
+        {% if productos %}
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">IdProducto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for IdProducto in productos %}
+                <tr>
+                    <td>{{IdProducto.IdProducto}}</td>
+                    <td>{{IdProducto.Nombre}}</td>
+                    <td>{{IdProducto.Precio}}</td>
+                    <td>{{IdProducto.Cantidad}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">IdProducto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                </tr>
+            </thead>
+        </table>
+        {% endif %}
+    </div>
+
+</body>
+</html>
